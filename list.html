@@ -8,10 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>상담 기록 목록</h1>
-            <p>전체 상담 내역을 확인하세요.</p>
-            <a href="index.html" class="nav-btn">새 상담 기록하기</a>
+        <header class="list-header">
+            <div class="header-titles">
+                <h1>상담 기록 목록</h1>
+                <p>전체 상담 내역을 확인하세요.</p>
+            </div>
+            <div class="header-buttons">
+                <button class="nav-btn print-btn" onclick="window.print()">🖨️ 인쇄하기</button>
+                <a href="index.html" class="nav-btn">새 상담 기록하기</a>
+            </div>
         </header>
 
         <table class="record-table">
