@@ -1,6 +1,7 @@
 // HTML 요소 가져오기
 const counselForm = document.getElementById('counsel-form');
 const recordList = document.getElementById('record-list');
+const idInput = document.getElementById('student-id'); // 학번 추가
 const nameInput = document.getElementById('student-name');
 const dateInput = document.getElementById('counsel-date');
 const detailsInput = document.getElementById('counsel-details');
@@ -18,11 +19,13 @@ function renderRecords() {
         const li = document.createElement('li');
         li.classList.add('record-item');
 
+        // [학번] 이름 (날짜) 형태로 출력되도록 변경
         li.innerHTML = `
             <div class="record-header">
                 <div>
+                    <span class="record-id">[${record.id}]</span>
                     <strong>${record.name}</strong> 
-                    <span>(${record.date})</span>
+                    <span class="record-date">(${record.date})</span>
                 </div>
                 <button class="delete-btn" onclick="deleteRecord(${index})">삭제</button>
             </div>
@@ -37,8 +40,9 @@ function renderRecords() {
 counselForm.addEventListener('submit', function(e) {
     e.preventDefault(); // 새로고침 방지
 
-    // 입력된 값 가져오기
+    // 입력된 값 가져오기 (학번 데이터 추가)
     const newRecord = {
+        id: idInput.value,
         name: nameInput.value,
         date: dateInput.value,
         details: detailsInput.value
@@ -53,6 +57,9 @@ counselForm.addEventListener('submit', function(e) {
     // 화면 업데이트 및 입력창 초기화
     renderRecords();
     counselForm.reset();
+    
+    // reset 후 날짜는 다시 오늘로 설정
+    dateInput.valueAsDate = new Date();
 });
 
 // 기록 삭제 함수
@@ -72,5 +79,5 @@ function deleteRecord(index) {
 // 페이지 로드 시 초기 렌더링
 renderRecords();
 
-// 오늘 날짜를 기본값으로 설정 (선택 사항)
+// 오늘 날짜를 기본값으로 설정
 dateInput.valueAsDate = new Date();
