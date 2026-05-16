@@ -37,16 +37,24 @@ function renderRecords() {
 }
 
 // 폼 제출 이벤트 처리
+// script.js 폼 제출 이벤트 부분 수정
 counselForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // 새로고침 방지
+    e.preventDefault();
 
-    // 입력된 값 가져오기 (학번 데이터 추가)
     const newRecord = {
-        id: idInput.value,
-        name: nameInput.value,
-        date: dateInput.value,
-        details: detailsInput.value
+        id: document.getElementById('student-id').value,
+        name: document.getElementById('student-name').value,
+        date: document.getElementById('counsel-date').value,
+        details: document.getElementById('counsel-details').value
     };
+
+    let records = JSON.parse(localStorage.getItem('counselingRecords')) || [];
+    records.unshift(newRecord);
+    localStorage.setItem('counselingRecords', JSON.stringify(records));
+
+    // ★ 저장 후 list.html 로 페이지 이동
+    window.location.href = 'list.html'; 
+});
 
     // 배열에 새 기록 추가
     records.unshift(newRecord); // 가장 최근 기록이 위로 올라오도록 배열의 앞에 추가
