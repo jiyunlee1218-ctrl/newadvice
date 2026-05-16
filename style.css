@@ -140,3 +140,16 @@ header p {
 .delete-btn:hover {
     background-color: #c0392b;
 }
+/* 학번 표시 스타일 추가 */
+.record-id {
+    font-size: 0.95em;
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.record-date {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    margin-left: 5px;
+}
