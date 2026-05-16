@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 상담 관리 시스템</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>학생 상담 관리</h1>
+            <p>학생들의 상담 내역을 기록하고 관리하세요.</p>
+        </header>
+
+        <section class="form-section">
+            <form id="counsel-form">
+                <div class="input-group">
+                    <label for="student-name">학생 이름</label>
+                    <input type="text" id="student-name" placeholder="예: 홍길동" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="counsel-date">상담 일자</label>
+                    <input type="date" id="counsel-date" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="counsel-details">상담 내용</label>
+                    <textarea id="counsel-details" rows="5" placeholder="상담 내용을 입력하세요" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">기록 저장</button>
+            </form>
+        </section>
+
+        <section class="list-section">
+            <h2>최근 상담 기록</h2>
+            <ul id="record-list">
+                </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
