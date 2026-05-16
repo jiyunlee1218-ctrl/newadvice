@@ -10,7 +10,7 @@ const detailsInput = document.getElementById('counsel-details');
 let records = JSON.parse(localStorage.getItem('counselingRecords')) || [];
 
 // 화면에 기록을 그려주는 함수
-function renderRecords() {
+//function renderRecords() {
     // 기존 목록 초기화
     recordList.innerHTML = '';
 
@@ -63,7 +63,7 @@ counselForm.addEventListener('submit', function(e) {
     localStorage.setItem('counselingRecords', JSON.stringify(records));
 
     // 화면 업데이트 및 입력창 초기화
-    renderRecords();
+   // renderRecords();
     counselForm.reset();
     
     // reset 후 날짜는 다시 오늘로 설정
@@ -80,12 +80,12 @@ function deleteRecord(index) {
         localStorage.setItem('counselingRecords', JSON.stringify(records));
         
         // 화면 업데이트
-        renderRecords();
+       // renderRecords();
     }
 }
 
 // 페이지 로드 시 초기 렌더링
-renderRecords();
+//renderRecords();
 
 // 오늘 날짜를 기본값으로 설정
 dateInput.valueAsDate = new Date();
