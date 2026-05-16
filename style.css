@@ -153,3 +153,94 @@ header p {
     color: #7f8c8d;
     margin-left: 5px;
 }
+/* 상단 이동 버튼 등 */
+.nav-btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.nav-btn:hover { background-color: #2980b9; }
+
+.secondary-btn {
+    background-color: #7f8c8d;
+}
+.secondary-btn:hover { background-color: #616a6b; }
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* 테이블 스타일 (list.html) */
+.record-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.record-table th, .record-table td {
+    border: 1px solid #ecf0f1;
+    padding: 12px;
+    text-align: center;
+}
+
+.record-table th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.record-table tr:hover { background-color: #f1f4f5; }
+
+/* 링크 텍스트 스타일 */
+.link-text {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link-text:hover {
+    text-decoration: underline;
+}
+
+/* 상세 보기 스타일 (view.html) */
+.view-content {
+    background-color: #f9fbfb;
+    border: 1px solid #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.info-row {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.detail-box {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+
+.detail-box strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.detail-box p {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #444;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
